@@ -1,0 +1,1350 @@
+
+    \documentclass[a4paper]{report}
+    \pagestyle{plain}
+    %\usepackage{amsmath}
+    %\usepackage{amssymb}
+    %\usepackage{amsthm}
+    %\usepackage{fancyvrb}
+    \usepackage[usenames]{color}
+    \usepackage[linkcolor=black,citecolor=black]{hyperref}
+    \usepackage{makeidx}
+    \makeindex
+
+    \setlength{\parindent}{0cm}
+    \addtolength{\parskip}{0.5em}
+    %\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+    \begin{document}
+    \input{defun.tex}
+
+    \title{cl-gdata API reference}
+    %\date{}
+    \maketitle
+
+    \tableofcontents
+    \newpage
+
+    
+    \chapter{The cl-gdata-service package}
+    cl-gdata-service package.
+      \section{Other functions}
+      
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__authenticates}
+    \begin{defun}[Function]
+    authenticates gdata-service
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+gdata-service
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+   instance
+
+
+
+
+      
+    \bigskip
+    \textsc{Condition Types Signalled}
+
+
+ 	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service-error]{gdata-service-error}
+    
+    \item
+    \hyperref[cl-gdata-service__class__gdata-error]{gdata-error}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Make a HTTP request to authenticate.
+If HTTP return code is 200, update the AUTH token of gdata-service.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__check-account-type}
+    \begin{defun}[Function]
+    check-account-type account-type
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+account-type
+	--- The Google account type. Must be one of\texttt{:google}, \texttt{:hosted-or-google} or \texttt{:hosted}
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+True is this Google account type is available.
+
+
+      
+    \bigskip
+    \textsc{Condition Types Signalled}
+
+
+ 	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-error]{gdata-error}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Check if the Google account type is available.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__gdata-service-account-type}
+    \begin{defun}[Function]
+    gdata-service-account-type object
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+instance
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+  
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+a keyword
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+              Return the type of account to use. Use \texttt{:google} forregular Google accounts or \texttt{:hosted} for Google Apps accounts,or \texttt{:hosted-or-google} to try finding a hosted account first and,
+if it doesn't exist, try finding a regular Google account.Default value: \texttt{:hosted-or-google}.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__gdata-service-auth}
+    \begin{defun}[Function]
+    gdata-service-auth object
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+instance
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+  
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+a string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+              The auth token used for authenticating requests
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__gdata-service-email}
+    \begin{defun}[Function]
+    gdata-service-email object
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+instance
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+  
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+a string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+              Return the email of the Google account.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__gdata-service-password}
+    \begin{defun}[Function]
+    gdata-service-password object
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+instance
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+  
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+a string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+              Return the password of the Google account.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__gdata-service-service}
+    \begin{defun}[Function]
+    gdata-service-service object
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+instance
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+  
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+a string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+       
+       The desired service for which credentials willbe obtained.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__fun__gdata-service-source}
+    \begin{defun}[Function]
+    gdata-service-source object
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+instance
+	--- a \hyperref[cl-gdata-service__class__gdata-service]{\texttt{gdata-service}}
+  
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+a string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+              Return the name of the user's application.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-service]{gdata-service}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+      \section{Other classes}
+      
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__class__gdata-error}
+    \begin{defun}[Class]
+    gdata-error
+
+
+      
+    \bigskip
+    \textsc{Superclasses}
+
+\color[rgb]{0.5,0.5,0.5}common-lisp:simple-error\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:simple-condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:error\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:serious-condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}sb-pcl::slot-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:t\color[rgb]{0,0,0}
+
+
+      
+    \bigskip
+    \textsc{Documented Subclasses}
+
+\hyperref[cl-gdata-service__class__gdata-request-error]{
+	  gdata-request-error
+	}
+      , \hyperref[cl-gdata-service__class__gdata-service-error]{
+	  gdata-service-error
+	}
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+GData main error.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__class__gdata-request-error}
+    \begin{defun}[Class]
+    gdata-request-error
+
+
+      
+    \bigskip
+    \textsc{Superclasses}
+
+\hyperref[cl-gdata-service__class__gdata-error]{
+	  gdata-error
+	}
+      , \color[rgb]{0.5,0.5,0.5}common-lisp:simple-error\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:simple-condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:error\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:serious-condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}sb-pcl::slot-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:t\color[rgb]{0,0,0}
+
+
+      
+    \bigskip
+    \textsc{Documented Subclasses}
+
+
+	    None
+	  
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Condition raised when an invalide request to theGoogle web services is performed.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__class__gdata-service}
+    \begin{defun}[Class]
+    gdata-service
+
+
+      
+    \bigskip
+    \textsc{Superclasses}
+
+\color[rgb]{0.5,0.5,0.5}common-lisp:standard-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}sb-pcl::slot-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:t\color[rgb]{0,0,0}
+
+
+      
+    \bigskip
+    \textsc{Documented Subclasses}
+
+\hyperref[cl-gdata-picasa__class__gdata-picasa]{
+	  gdata-picasa
+	}
+      
+
+
+      
+    \bigskip
+    \textsc{Slot Access Functions}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-email]{gdata-service-email}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-password]{gdata-service-password}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-account-type]{gdata-service-account-type}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-service]{gdata-service-service}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-source]{gdata-service-source}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-auth]{gdata-service-auth}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+The superclass of all Google service.Subclasses of \texttt{gdata-service} represents Google service available using
+cl-gdata : Picasa.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__class__gdata-service-error}
+    \begin{defun}[Class]
+    gdata-service-error
+
+
+      
+    \bigskip
+    \textsc{Superclasses}
+
+\hyperref[cl-gdata-service__class__gdata-error]{
+	  gdata-error
+	}
+      , \color[rgb]{0.5,0.5,0.5}common-lisp:simple-error\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:simple-condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:error\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:serious-condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:condition\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}sb-pcl::slot-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:t\color[rgb]{0,0,0}
+
+
+      
+    \bigskip
+    \textsc{Documented Subclasses}
+
+
+	    None
+	  
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Condition raised when the Google web services are down.
+
+
+    
+    \end{defun}
+  
+  
+      \section{Other variables}
+      
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-atom+}
+    \begin{defun}[Variable]
+    +gdata-atom+
+
+
+	No documentation string.  Possibly unimplemented or incomplete.
+	
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-bad-request+}
+    \begin{defun}[Variable]
+    +gdata-bad-request+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Invalid request URI or header, or unsupported nonstandard parameter.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-conflict+}
+    \begin{defun}[Variable]
+    +gdata-conflict+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Specified version number doesn't match resource's latest version number.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-created+}
+    \begin{defun}[Variable]
+    +gdata-created+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Creation of a resource was successful.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-forbidden+}
+    \begin{defun}[Variable]
+    +gdata-forbidden+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Unsupported standard parameter, or authentication or authorization failed.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-internal-error+}
+    \begin{defun}[Variable]
+    +gdata-internal-error+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Internal error. This is the default code that is used for all unrecognizederrors.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-not-found+}
+    \begin{defun}[Variable]
+    +gdata-not-found+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Resource (such as a feed or entry) not found.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-not-modified+}
+    \begin{defun}[Variable]
+    +gdata-not-modified+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+The resource hasn't changed since the time specified in the request'sIf-Modified-Since header.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-ok+}
+    \begin{defun}[Variable]
+    +gdata-ok+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+No error.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable__+gdata-unauthorized+}
+    \begin{defun}[Variable]
+    +gdata-unauthorized+
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Authorization required.
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-service__variable___source_}
+    \begin{defun}[Variable]
+    *source*
+
+
+	No documentation string.  Possibly unimplemented or incomplete.
+	
+
+
+    
+    \end{defun}
+  
+  
+    \chapter{The cl-gdata-picasa package}
+    cl-gdata-picasa package.
+The Picasa Web Albums Data API allows for websites and programs to integrate with Picasa Web Albums.
+      \section{Other functions}
+      
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__fun__add-album}
+    \begin{defun}[Function]
+    add-album gdata-picasa user title summary location access keywords
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+gdata-picasa
+	--- a \hyperref[cl-gdata-picasa__class__gdata-picasa]{\texttt{gdata-picasa}}
+   instance
+
+user
+	--- An username
+
+title
+	--- Title of the photos albun
+
+summary
+	--- A summary / description for this album
+
+location
+	--- Place for a geolocation of this album
+
+access
+	--- \texttt{private} or \texttt{public}. Public albums are searchable by everyone on the internet. Defaults to \texttt{public}
+
+keywords
+	--- A String, keywords separated by coma
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+A string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Add a new album for user. Needs authentication.Return a string which contains XML format representing the new album feed.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-picasa__class__gdata-picasa]{gdata-picasa}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__fun__add-photo}
+    \begin{defun}[Function]
+    add-photo gdata-picasa user album filename
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+gdata-picasa
+	--- a \hyperref[cl-gdata-picasa__class__gdata-picasa]{\texttt{gdata-picasa}}
+   instance
+
+user
+	--- An username
+
+album
+	--- Name of the photos albun
+
+filenanem
+	--- The image filename
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+A string
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Add a photo for user's album. Needs authentication.Return a string which contains XML format representing the photo feed.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-picasa__class__gdata-picasa]{gdata-picasa}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__fun__list-albums}
+    \begin{defun}[Function]
+    list-albums gdata-picasa user &key authentication-p
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+gdata-picasa
+	--- a \hyperref[cl-gdata-picasa__class__gdata-picasa]{\texttt{gdata-picasa}}
+   instance
+
+user
+	--- An username
+
+authentication-p
+	--- Specify if the request is done with authentification or not
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+A string
+
+
+      
+    \bigskip
+    \textsc{Condition Types Signalled}
+
+
+ 	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-request-error]{gdata-request-error}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Get a feed of an user's albums.Return a string in XML format which contains the list of albums.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-picasa__class__gdata-picasa]{gdata-picasa}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__fun__list-photos}
+    \begin{defun}[Function]
+    list-photos gdata-picasa user album &key authentication-p
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+gdata-picasa
+	--- a \hyperref[cl-gdata-picasa__class__gdata-picasa]{\texttt{gdata-picasa}}
+   instance
+
+user
+	--- An username
+
+album
+	--- Name of the photos albun
+
+authentication-p
+	--- Specify if the request is done with authentification or not
+
+
+
+
+    
+    \bigskip
+    \textsc{Return Values}
+
+A string
+
+
+      
+    \bigskip
+    \textsc{Condition Types Signalled}
+
+
+ 	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-request-error]{gdata-request-error}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Get a feed listing all of the photos in an album belonging
+to an user.
+Return a string in XML format which contains the list of photos in this album.
+
+
+      
+    \bigskip
+    \textsc{See also}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-picasa__class__gdata-picasa]{gdata-picasa}
+    
+	
+    \end{itemize}
+  
+      
+
+
+    
+    \end{defun}
+  
+  
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__fun__make-gdata-picasa}
+    \begin{defun}[Function]
+    make-gdata-picasa email password &key (account-type hosted-or-google)
+
+
+    
+    \bigskip
+    \textsc{Arguments}
+
+email
+	--- The email of the Google account
+
+password
+	--- The password of the Google account
+
+
+
+
+      
+    \bigskip
+    \textsc{Condition Types Signalled}
+
+
+ 	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__class__gdata-error]{gdata-error}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+Creates a new gdata-picasa object.
+
+
+    
+    \end{defun}
+  
+  
+      \section{Other classes}
+      
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__class__gdata-picasa}
+    \begin{defun}[Class]
+    gdata-picasa
+
+
+      
+    \bigskip
+    \textsc{Superclasses}
+
+\hyperref[cl-gdata-service__class__gdata-service]{
+	  gdata-service
+	}
+      , \color[rgb]{0.5,0.5,0.5}common-lisp:standard-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}sb-pcl::slot-object\color[rgb]{0,0,0}, \color[rgb]{0.5,0.5,0.5}common-lisp:t\color[rgb]{0,0,0}
+
+
+      
+    \bigskip
+    \textsc{Documented Subclasses}
+
+
+	    None
+	  
+
+
+      
+    \bigskip
+    \textsc{Returned by}
+
+
+ 	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-picasa__fun__make-gdata-picasa]{make-gdata-picasa}
+    
+	
+    \end{itemize}
+  
+      
+
+
+      
+    \bigskip
+    \textsc{Inherited Slot Access Functions}
+
+
+	
+    \begin{itemize}
+    
+	  
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-email]{gdata-service-email}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-password]{gdata-service-password}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-account-type]{gdata-service-account-type}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-service]{gdata-service-service}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-source]{gdata-service-source}
+    
+    \item
+    \hyperref[cl-gdata-service__fun__gdata-service-auth]{gdata-service-auth}
+    
+	
+    \end{itemize}
+  
+      
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+A GData Picasa service.
+
+
+    
+    \end{defun}
+  
+  
+      \section{Other variables}
+      
+
+    \rule{\linewidth}{0.1mm}
+    
+    \label{cl-gdata-picasa__variable___print-picasa_}
+    \begin{defun}[Variable]
+    *print-picasa*
+
+
+	
+    \bigskip
+    \textsc{Details}
+
+If T, write the customized presentation of the cl-gdata-picasa objects.
+
+
+    
+    \end{defun}
+  
+  
+
+    \printindex
+    \end{document}
+  

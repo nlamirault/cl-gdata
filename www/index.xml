@@ -1,0 +1,134 @@
+<page title="cl-gdata : A Common Lisp wrapper to the Google GData API.">
+  <p>
+    cl-gdata is a Common Lisp wrapper to the
+    <a href="http://code.google.com/apis/gdata/"> Google Gdata API </a>.
+    It is developed on <a href="http://www.debian.org"> Debian GNU/Linux </a>, using 
+    <a href="http://www.sbcl.org"> SBCL </a>.
+  </p>
+  <p>
+    cl-gdata was written
+    by <a href="mailto:nlamirault@gmail.com">Nicolas Lamirault</a>
+    and is available under a
+    <a href="http://www.opensource.org/licenses/mit-license.php"> MIT </a>
+    style license.
+  </p>
+
+  <h3>Installation using asdf-install</h3>
+
+  <h3>Installation using Mudballs</h3>
+
+  <h3>Manual Installation</h3>
+  <p>
+    Download a <a href="http://code.google.com/p/cl-gdata/"> cl-gdata tarball</a>
+  </p>
+  <p>
+    cl-gdata needs
+    <a href="http://www.weitz.de/drakma/">Drakma</a>, 
+    <a href="http://www.weitz.de/cl-ppcre/">cl-ppcre</a>, 
+    <a href="http://www.lichteblau.com/cxml-stp/">cxml-stp</a>
+    and their dependencies.
+  </p>
+  <p>
+    <a href="http://www.cliki.net/asdf">ASDF</a> is used for
+    compilation.  Register the .asd file, e.g. by symlinking it,
+    then compile cl-gdata using <tt>asdf:operate</tt>.
+  </p>
+  <pre>$ ln -sf `pwd`/cl-gdata.asd /path/to/your/registry/
+* (asdf:operate 'asdf:load-op :cl-gdata)</pre>
+
+  <h3>Usage</h3>
+  <p>
+    Please refer to the <a href="api/index.html">API documentation</a>.
+There is also a <a href="api/documentation.pdf"> PDF </a> version of the API.
+  </p>
+
+  <h3> Examples </h3>
+  <ul>
+    <li> Picasa API </li>
+    <ul>
+      <li> List availables albums </li>
+      <pre>CL-USER> (let* ((gaccount
+                 (cl-gdata-picasa:make-gdata-picasa "xxxxx@gmail.com"
+                                                    "xxxxx"))
+                (xml
+                 (cl-gdata-picasa:list-albums
+                  gaccount "xxxxx@gmail.com"
+                  :authentication-p t))
+                (document (cxml:parse xml (cxml-stp:make-builder))))
+           (cxml-stp:do-recursively (a document)
+             (when (and (typep a 'stp:element)
+                        (string-equal "name" (stp:local-name a))
+                        (string-equal "entry" (stp:local-name (stp:parent a))))
+               (format t "~%Album: ~A"
+                       (stp:string-value a)))))
+
+
+Album: Cauterets_0607122008
+Album: RepasAvecNico
+Album: Travaux
+[...]
+      NIL</pre>
+
+      <li> List photos from an album </li>
+      <pre>CL-USER> (let* ((gaccount
+                             (cl-gdata-picasa:make-gdata-picasa "xxxxxxx@gmail.com"
+                                                                "xxxxxxx"))
+                (xml
+                 (cl-gdata-picasa::list-photos
+                  gaccount "xxxxxxxx@gmail.com"
+                  "Cauterets_0607122008"
+                  :authentication-p t))
+                (document (cxml:parse xml (cxml-stp:make-builder))))
+           (cxml-stp:do-recursively (a document)
+             (when (and (typep a 'stp:element)
+                        (string-equal "title" (stp:local-name a))
+                        (string-equal "media" (stp:namespace-prefix a)))
+               (format t "~%Photo: ~A"
+                       (stp:string-value a)))))
+          
+Photo: imgp1153.jpg
+Photo: imgp1154.jpg
+Photo: imgp1155.jpg
+[...]
+      </pre>
+
+      <li>Add an album</li>
+      <pre>CL-USER> (let ((gaccount
+                (cl-gdata-picasa:make-gdata-picasa "xxxxxxxx@gmail.com"
+                                                   "xxxxxxxx")))
+           (cl-gdata-picasa::add-album gaccount
+                                       "xxxxxxxx@gmail.com"
+                                       "cl-gdata"
+                                       "Picasa API from Common Lisp"
+                                       "France"
+                                       "public"
+                                       "picasa, lisp, CL")
+           (let* ((xml
+                  (cl-gdata-picasa:list-albums
+                   gaccount "xxxxxxxxx@gmail.com"
+                   :authentication-p t))
+                  (document (cxml:parse xml (cxml-stp:make-builder))))
+             (cxml-stp:do-recursively (a document)
+               (when (and (typep a 'stp:element)
+                          (string-equal "name" (stp:local-name a))
+                        (string-equal "entry" (stp:local-name (stp:parent a))))
+                 (format t "~%Album: ~A"
+                         (stp:string-value a))))))
+           
+[...]
+Album: ClGdata</pre>
+
+
+   </ul>
+
+   <li></li>
+  </ul>
+
+  <h3>Recent changes</h3>
+  <p><b>2008-12-22</b></p>
+  <ul>
+    <li>
+      Web site creation.
+    </li>
+  </ul>
+</page>

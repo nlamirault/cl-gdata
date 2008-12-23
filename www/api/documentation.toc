@@ -1,0 +1,8 @@
+\contentsline {chapter}{\numberline {1}The cl-gdata-service package}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Other functions}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Other classes}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}Other variables}{8}{section.1.3}
+\contentsline {chapter}{\numberline {2}The cl-gdata-picasa package}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Other functions}{10}{section.2.1}
+\contentsline {section}{\numberline {2.2}Other classes}{13}{section.2.2}
+\contentsline {section}{\numberline {2.3}Other variables}{14}{section.2.3}

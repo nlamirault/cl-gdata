@@ -1,0 +1,64 @@
+\begin{theindex}
+
+  \item {*print-picasa* }{\cf *print-picasa*\ \rm \lowercase {Variable}}, 
+		\hyperpage{14}
+  \item {*source* }{\cf *source*\ \rm \lowercase {Variable}}, 
+		\hyperpage{9}
+  \item {+gdata-atom+ }{\cf +gdata-atom+\ \rm \lowercase {Variable}}, 
+		\hyperpage{8}
+  \item {+gdata-bad-request+ }{\cf +gdata-bad-request+\ \rm \lowercase {Variable}}, 
+		\hyperpage{8}
+  \item {+gdata-conflict+ }{\cf +gdata-conflict+\ \rm \lowercase {Variable}}, 
+		\hyperpage{8}
+  \item {+gdata-created+ }{\cf +gdata-created+\ \rm \lowercase {Variable}}, 
+		\hyperpage{8}
+  \item {+gdata-forbidden+ }{\cf +gdata-forbidden+\ \rm \lowercase {Variable}}, 
+		\hyperpage{8}
+  \item {+gdata-internal-error+ }{\cf +gdata-internal-error+\ \rm \lowercase {Variable}}, 
+		\hyperpage{9}
+  \item {+gdata-not-found+ }{\cf +gdata-not-found+\ \rm \lowercase {Variable}}, 
+		\hyperpage{9}
+  \item {+gdata-not-modified+ }{\cf +gdata-not-modified+\ \rm \lowercase {Variable}}, 
+		\hyperpage{9}
+  \item {+gdata-ok+ }{\cf +gdata-ok+\ \rm \lowercase {Variable}}, 
+		\hyperpage{9}
+  \item {+gdata-unauthorized+ }{\cf +gdata-unauthorized+\ \rm \lowercase {Variable}}, 
+		\hyperpage{9}
+  \item {add-album }{\cf add-album\ \rm \lowercase {Function}}, 
+		\hyperpage{10}
+  \item {add-photo }{\cf add-photo\ \rm \lowercase {Function}}, 
+		\hyperpage{11}
+  \item {authenticates }{\cf authenticates\ \rm \lowercase {Function}}, 
+		\hyperpage{2}
+  \item {check-account-type }{\cf check-account-type\ \rm \lowercase {Function}}, 
+		\hyperpage{3}
+  \item {gdata-error }{\cf gdata-error\ \rm \lowercase {Class}}, 
+		\hyperpage{6}
+  \item {gdata-picasa }{\cf gdata-picasa\ \rm \lowercase {Class}}, 
+		\hyperpage{13}
+  \item {gdata-request-error }{\cf gdata-request-error\ \rm \lowercase {Class}}, 
+		\hyperpage{6}
+  \item {gdata-service }{\cf gdata-service\ \rm \lowercase {Class}}, 
+		\hyperpage{7}
+  \item {gdata-service-account-type }{\cf gdata-service-account-type\ \rm \lowercase {Function}}, 
+		\hyperpage{3}
+  \item {gdata-service-auth }{\cf gdata-service-auth\ \rm \lowercase {Function}}, 
+		\hyperpage{4}
+  \item {gdata-service-email }{\cf gdata-service-email\ \rm \lowercase {Function}}, 
+		\hyperpage{4}
+  \item {gdata-service-error }{\cf gdata-service-error\ \rm \lowercase {Class}}, 
+		\hyperpage{7}
+  \item {gdata-service-password }{\cf gdata-service-password\ \rm \lowercase {Function}}, 
+		\hyperpage{4}
+  \item {gdata-service-service }{\cf gdata-service-service\ \rm \lowercase {Function}}, 
+		\hyperpage{5}
+  \item {gdata-service-source }{\cf gdata-service-source\ \rm \lowercase {Function}}, 
+		\hyperpage{5}
+  \item {list-albums }{\cf list-albums\ \rm \lowercase {Function}}, 
+		\hyperpage{11}
+  \item {list-photos }{\cf list-photos\ \rm \lowercase {Function}}, 
+		\hyperpage{12}
+  \item {make-gdata-picasa }{\cf make-gdata-picasa\ \rm \lowercase {Function}}, 
+		\hyperpage{13}
+
+\end{theindex}
