@@ -1,0 +1,20 @@
+--------------
+-- cl-gdata --
+--------------
+
+
+* GData Service Unit Tests *
+  Add some unit tests to check the Google authentication.
+
+* Picasa *
+  Add some features to the Google Picasa GData API 
+
+* GData service *
+  Implements the Google authentication.
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:

@@ -1,0 +1,39 @@
+--------------
+-- cl-gdata --
+--------------
+
+
+** Required softwares **
+
+  You will need :
+
+  - ASDF : http://www.cliki.net/asdf
+  - drakma : http://weitz.de/drakma
+  - cl-ppcre : http://weitz.de/cl-ppcre
+
+
+
+** ASDF **
+
+  In /usr/share/common-lisp/systems, create a symbolic link
+  to the system definition file (cl-gdata.asd)
+  or
+  add the cl-gdata directory to *central-directory* of ASDF :
+  CL-USER> (push "/directory/cl-gdata/" asdf:*central-registry*)
+
+
+
+** Load **
+
+  In the Lisp system :
+  CL-USER> (asdf:operate 'asdf:load-op :cl-gdata)
+
+** API **
+
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:
