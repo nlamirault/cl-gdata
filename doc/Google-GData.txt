@@ -1,0 +1,10 @@
+Documentation from Google :
+
+- GData reference:
+  http://code.google.com/apis/gdata/elements.html
+
+- Account :
+  http://code.google.com/apis/accounts/AuthForInstalledApps.html
+
+- Spreadsheets :
+  http://code.google.com/apis/spreadsheets/overview.html

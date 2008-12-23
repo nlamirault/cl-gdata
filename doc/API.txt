@@ -1,0 +1,21 @@
+--------------
+-- cl-gdata --
+--------------
+
+
+* Spreadsheets *
+
+
+[x] Get a list of spreadsheets
+
+
+
+
+
+
+
+Local variables:
+mode: outline
+paragraph-separate: "[  ^L]*$"
+end:
+
